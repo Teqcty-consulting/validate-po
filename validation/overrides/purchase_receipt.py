@@ -6,7 +6,7 @@ from erpnext.buying.doctype.purchase_order.purchase_order import make_purchase_r
 @frappe.whitelist()
 def validate_purchase_receipt(source_name, target_doc=None):
     gate_entry_exists = frappe.db.exists("Gate Entry", {"purchase_order": source_name})
-    frappe.msgprint("Custom Gate Entry Check Triggered")
+    
 
     if not gate_entry_exists:
         frappe.throw(_("Please create a Gate Entry before creating a Purchase Receipt."))
