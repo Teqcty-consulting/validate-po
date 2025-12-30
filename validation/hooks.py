@@ -5,6 +5,22 @@ app_description = "validates gate entry "
 app_email = "siddhant.saxena@nexityconsulting.com"
 app_license = "agpl-3.0"
 
+
+
+override_whitelisted_methods = {
+    "erpnext.buying.doctype.purchase_order.purchase_order.make_purchase_receipt": "validation.overrides.purchase_receipt.validate_purchase_receipt",
+    "erpnext.buying.doctype.purchase_order.purchase_order.make_purchase_invoice": "validation.overrides.purchase_invoice.validate_purchase_invoice",
+    "erpnext.accounts.doctype.payment_request.payment_request.make_payment_request": "validation.overrides.payment_request.validate_payment_request"
+}
+
+
+# doc_events = {
+#     "Purchase Invoice": {
+#         "validate": "validation.overrides.purchase-invoice.validate_purchase_invoice"    },
+#     "Payment Request": {
+#         "validate": "validation.overrides.payment-request.validate_payment_request"    }
+# }
+
 # Apps
 # ------------------
 
